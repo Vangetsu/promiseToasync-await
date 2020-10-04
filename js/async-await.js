@@ -35,9 +35,9 @@ function generateHTML(data) {
 }
 
 btn.addEventListener('click', (event) => {
-  event.target.textContent = "Loading...";
+  event.target.textContent = 'Loading...';
 
   getPeopleInSpace(astrosUrl)
     .then(generateHTML)
-    .finally ( () => event.target.remove() )
+    .finally( () => event.target.remove() )
 });
