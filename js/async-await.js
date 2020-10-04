@@ -8,12 +8,12 @@ async function getPeopleInSpace(url) {
   const peopleResponse = await fetch(url);
   const peopleJSON = await peopleResponse.json();
 
-  const profiles = peopleJSON.people.map(async person => {
+  const profiles = peopleJSON.people.map( async (person) => {
     const craft = person.craft;
     const profileResponse = await fetch(wikiUrl + person.name);
     const profileJSON = await profileResponse.json();
 
-    return{...profileJSON, craft};
+    return { ...profileJSON, craft };
   });
 
   return Promise.all(profiles);
